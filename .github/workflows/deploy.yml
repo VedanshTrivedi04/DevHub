@@ -20,6 +20,15 @@ jobs:
         with:
           node-version: "20"
           cache: npm
+      - name: Diagnostics
+        run: |
+          echo "== Environment diagnostics =="
+          node -v || true
+          npm -v || true
+          uname -a || true
+          pwd || true
+          ls -la || true
+          echo "== End diagnostics =="
       - name: Restore cache
         uses: actions/cache@v3
         with:
