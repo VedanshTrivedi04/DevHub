@@ -1,0 +1,21 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import BylawsHero from '@/components/bylaws/BylawsHero.tsx'
+import BylawsContent from '@/components/bylaws/BylawsContent.tsx'
+import BylawsNavigation from '@/components/bylaws/BylawsNavigation.tsx'
+---
+
+<BaseLayout title="DevHub Bylaws - Coding Club PIEMR">
+  <CommonHeader client:load />
+  
+  <main class="min-h-screen flex flex-col">
+    <BylawsHero client:idle />
+    <BylawsContent client:idle />
+    <BylawsNavigation client:idle />
+  </main>
+
+  <CommonFooter client:idle variant="complex" />
+</BaseLayout>

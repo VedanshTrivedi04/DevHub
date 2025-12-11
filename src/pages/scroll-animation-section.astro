@@ -1,0 +1,15 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import ScrollAnimationSection from '@/components/scroll-animation-section/ScrollAnimationSection.tsx'
+---
+
+<BaseLayout title="Scroll Animation Section - DevHub">
+  <CommonHeader client:load />
+  <main class="min-h-screen flex flex-col">
+    <ScrollAnimationSection client:load />
+  </main>
+  <CommonFooter client:idle variant="complex" />
+</BaseLayout>

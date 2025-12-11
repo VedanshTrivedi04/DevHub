@@ -1,0 +1,54 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import CoreCommitteeGrid from '@/components/core-committee/CoreCommitteeGrid.tsx'
+---
+
+<BaseLayout title="Core Committee - DevHub">
+  <CommonHeader client:load />
+  
+  <main class="min-h-screen flex flex-col">
+    {/* Hero Section */}
+    <section class="relative py-12 md:py-16 lg:py-20 overflow-hidden">
+      <div class="absolute inset-0 grid-pattern opacity-10"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center mb-12">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            <span class="text-gradient">Core Committee</span>
+          </h1>
+          <p class="text-lg text-muted-foreground">
+            Meet the dedicated leaders driving DevHub's mission to empower students through web development education and innovation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* Committee Grid */}
+    <section class="flex-1 py-12 md:py-16 lg:py-20">
+      <div class="container mx-auto px-4">
+        <CoreCommitteeGrid client:idle />
+      </div>
+    </section>
+
+    {/* Navigation Section */}
+    <section class="py-12 md:py-16 border-t border-border">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a href="./about-us.html" class="px-6 py-3 rounded-lg border border-primary text-primary hover:bg-primary/10 transition-colors font-medium">
+            ← Back to About Us
+          </a>
+          <a href="./homepage.html" class="px-6 py-3 rounded-lg border border-border hover:border-primary text-foreground hover:text-primary transition-colors font-medium">
+            Home
+          </a>
+          <a href="./registration-form.html" class="px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground hover:shadow-glow transition-all font-medium">
+            Register Now
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <CommonFooter client:idle />
+</BaseLayout>

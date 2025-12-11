@@ -1,0 +1,17 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import AnimatedHeroSection from '@/components/animated-hero-section/AnimatedHeroSection.tsx'
+---
+
+<BaseLayout title="Animated Hero - DevHub">
+  <div class="flex flex-col min-h-screen bg-background">
+    <CommonHeader client:load />
+    <main class="flex-1">
+      <AnimatedHeroSection client:load />
+    </main>
+    <CommonFooter client:idle variant="simple" />
+  </div>
+</BaseLayout>

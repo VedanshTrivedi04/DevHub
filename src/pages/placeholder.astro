@@ -1,0 +1,27 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+---
+
+<BaseLayout title="Page Under Construction - DevHub">
+  <div class="min-h-screen flex items-center justify-center p-4 dot-pattern">
+    <Card className="glass max-w-md w-full">
+      <CardHeader>
+        <CardTitle className="text-gradient text-center">Under Construction</CardTitle>
+        <CardDescription className="text-center">
+          This page is currently being built. Check back soon!
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-col items-center gap-4">
+        <div class="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+        <a 
+          href="./index.html" 
+          class="text-primary hover:text-primary/80 transition-colors underline"
+        >
+          Return to Homepage
+        </a>
+      </CardContent>
+    </Card>
+  </div>
+</BaseLayout>

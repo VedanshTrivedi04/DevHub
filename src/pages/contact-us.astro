@@ -1,0 +1,30 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import ContactHero from '@/components/contact-us/ContactHero.tsx'
+import ContactForm from '@/components/contact-us/ContactForm.tsx'
+import ContactInfo from '@/components/contact-us/ContactInfo.tsx'
+---
+
+<BaseLayout title="Contact Us - DevHub Coding Club PIEMR">
+  <CommonHeader client:load />
+  
+  <main class="min-h-screen flex flex-col">
+    <ContactHero client:idle />
+    
+    <div class="flex-1 container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <div class="lg:col-span-2">
+          <ContactForm client:load />
+        </div>
+        <div>
+          <ContactInfo client:idle />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <CommonFooter client:idle />
+</BaseLayout>

@@ -1,0 +1,27 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import HeroSection from '@/components/about-us/HeroSection.tsx'
+import FoundingInfo from '@/components/about-us/FoundingInfo.tsx'
+import MissionSection from '@/components/about-us/MissionSection.tsx'
+import VisionSection from '@/components/about-us/VisionSection.tsx'
+import TechStackSection from '@/components/about-us/TechStackSection.tsx'
+import CTASection from '@/components/about-us/CTASection.tsx'
+---
+
+<BaseLayout title="About DevHub - Coding Club PIEMR">
+  <CommonHeader client:load />
+  
+  <main class="min-h-screen flex flex-col">
+    <HeroSection client:load />
+    <FoundingInfo client:idle />
+    <MissionSection client:idle />
+    <VisionSection client:idle />
+    <TechStackSection client:idle />
+    <CTASection client:idle />
+  </main>
+
+  <CommonFooter client:idle variant="complex" />
+</BaseLayout>

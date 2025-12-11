@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- Dark Blue Left Bracket/Parenthesis -->
+  <path d="M 120 60 Q 80 60 80 100 L 80 300 Q 80 340 120 340" fill="none" stroke="#001f5c" stroke-width="35" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Light Blue Right Bracket/Parenthesis -->
+  <path d="M 280 60 Q 320 60 320 100 L 320 300 Q 320 340 280 340" fill="none" stroke="#0099ff" stroke-width="35" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Left Eye -->
+  <circle cx="160" cy="160" r="12" fill="#001f5c"/>
+  
+  <!-- Right Eye -->
+  <circle cx="240" cy="160" r="12" fill="#001f5c"/>
+  
+  <!-- Smile Arc -->
+  <path d="M 170 220 Q 200 250 230 220" fill="none" stroke="#001f5c" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

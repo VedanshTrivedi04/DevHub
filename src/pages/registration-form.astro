@@ -1,0 +1,19 @@
+
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import CommonHeader from '@/components/common/CommonHeader.tsx'
+import CommonFooter from '@/components/common/CommonFooter.tsx'
+import RegistrationFormComponent from '@/components/registration-form/RegistrationFormComponent.tsx'
+---
+
+<BaseLayout title="Registration Form - DevHub">
+  <CommonHeader client:load />
+  
+  <main class="min-h-[calc(100vh-128px)] flex flex-col">
+    <div class="flex-1 container mx-auto px-4 py-12">
+      <RegistrationFormComponent client:load />
+    </div>
+  </main>
+
+  <CommonFooter client:idle variant="simple" />
+</BaseLayout>
