@@ -100,6 +100,8 @@ function redirectMissingRoutes() {
 }
 
 export default defineConfig({
+  base: '/DevHub/',
+  site: 'https://VedanshTrivedi04.github.io/DevHub',
   integrations: [
     react({
       babel: {

@@ -1,10 +1,10 @@
-import { c as createComponent, b as createAstro, d as addAttribute, e as renderHead, f as renderSlot, a as renderTemplate } from "./astro/server.B5n5wocT.js";
+import { b as createAstro, c as createComponent, d as addAttribute, e as renderHead, f as renderSlot, a as renderTemplate } from "./astro/server.CrYqznsW.js";
 import "piccolore";
 import "html-escaper";
 import { clsx } from "clsx";
 /* empty css                           */
 import { twMerge } from "tailwind-merge";
-const $$Astro = createAstro();
+const $$Astro = createAstro("https://VedanshTrivedi04.github.io/DevHub");
 const $$BaseLayout = createComponent(($$result, $$props, $$slots) => {
   const Astro = $$result.createAstro($$Astro, $$props, $$slots);
   Astro.self = $$BaseLayout;
