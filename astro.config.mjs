@@ -99,9 +99,11 @@ function redirectMissingRoutes() {
   };
 }
 
+const IS_PROD = process.env.NODE_ENV === 'production' || process.env.GITHUB_ACTIONS === 'true';
+
 export default defineConfig({
-  base: '/DevHub/',
-  site: 'https://VedanshTrivedi04.github.io/DevHub',
+  base: IS_PROD ? '/DevHub/' : '/',
+  site: IS_PROD ? 'https://VedanshTrivedi04.github.io/DevHub' : undefined,
   integrations: [
     react({
       babel: {
