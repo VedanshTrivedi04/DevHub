@@ -9,6 +9,7 @@
     "dev": "astro dev",
   "predeploy": "astro build",
   "deploy": "node ./scripts/deploy-local.js",
+  "deploy:force": "cross-env FORCE_DEPLOY=true node ./scripts/deploy-local.js",
     "build": "astro build",
     "preview": "astro preview"
   },

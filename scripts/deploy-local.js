@@ -31,14 +31,14 @@ async function rmrf(dir) {
 }
 
 async function main() {
-  const repo = (await (async () => {
-    try {
-      const { stdout } = await import('node:child_process').then(({ execSync }) => ({ stdout: execSync('git config --get remote.origin.url').toString().trim() }));
-      return stdout;
-    } catch (e) {
-      throw new Error('Unable to read git remote origin URL. Ensure this is a git repo with an origin remote.');
-    }
-  }))();
+  let repo;
+  try {
+    // Use execSync to read remote URL synchronously
+    const { execSync } = await import('node:child_process');
+    repo = execSync('git config --get remote.origin.url').toString().trim();
+  } catch (e) {
+    throw new Error('Unable to read git remote origin URL. Ensure this is a git repo with an origin remote.');
+  }
 
   const distDir = path.resolve(process.cwd(), 'dist');
   try {
@@ -72,6 +72,24 @@ async function main() {
     try { await run('git', ['-C', tmp, 'commit', '-m', 'chore: init gh-pages']); } catch (e) { /* maybe nothing to commit */ }
   }
 
+  // preserve CNAME from current repo root or from the cloned gh-pages (if present)
+  let cnameContent = null;
+  try {
+    const mainCnamePath = path.join(process.cwd(), 'CNAME');
+    const clonedCnamePath = path.join(tmp, 'CNAME');
+    try {
+      cnameContent = await fs.readFile(mainCnamePath, 'utf8');
+      console.log('Preserving CNAME from project root');
+    } catch (e) {
+      try {
+        cnameContent = await fs.readFile(clonedCnamePath, 'utf8');
+        console.log('Preserving CNAME from existing gh-pages branch');
+      } catch (e2) {
+        // no CNAME found
+      }
+    }
+  } catch (e) {}
+
   console.log('Clearing old files in gh-pages working tree...');
   for (const f of await fs.readdir(tmp)) {
     if (f === '.git') continue;
@@ -85,9 +103,23 @@ async function main() {
   try { await fs.writeFile(path.join(tmp, '.nojekyll'), ''); } catch (e) {}
 
   console.log('Committing and pushing to gh-pages...');
+  // write CNAME if we preserved one
+  if (cnameContent) {
+    try { await fs.writeFile(path.join(tmp, 'CNAME'), cnameContent, 'utf8'); } catch (e) {}
+  }
   await run('git', ['-C', tmp, 'add', '--all']);
   try { await run('git', ['-C', tmp, 'commit', '-m', `chore: deploy (${new Date().toISOString()})`]); } catch (e) { console.log('Nothing to commit'); }
-  await run('git', ['-C', tmp, 'push', '--set-upstream', 'origin', 'gh-pages', '--force']);
+
+  // Default to non-forced push. To force, set env FORCE_DEPLOY=true
+  const useForce = process.env.FORCE_DEPLOY === 'true';
+  const pushArgs = ['-C', tmp, 'push', '--set-upstream', 'origin', 'gh-pages'];
+  if (useForce) pushArgs.push('--force');
+  try {
+    await run('git', pushArgs);
+  } catch (err) {
+    console.error('Push failed. If you must overwrite the remote gh-pages branch, re-run with FORCE_DEPLOY=true.');
+    throw err;
+  }
 
   console.log('Deployment complete. Cleaning up...');
   await rmrf(tmp);
