@@ -28,8 +28,8 @@ export default function CodeRainBackground({
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
 
-    const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン'
-    const fontSize = 14
+       const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz<>()[]{}|'
+
     const columns = Math.floor(canvas.width / fontSize)
     const drops: number[] = Array(columns).fill(1)
 
