@@ -19,13 +19,13 @@ export interface ContactInfoModel {
 }
 
 export const DEVHUB_CONTACT_INFO: ContactInfoModel = {
-  email: "devhub.piemr@example.com",
-  phone: "+91 98765 43210",
+  email: "devhub.piemr@gmail.com",
+  phone: "President : 9584441119        Vice President : 8889992223",
   address: {
-    line1: "Parmanand Institute of Engineering & Management Research (PIEMR)",
+    line1: "Prestige Institute of Engineering and Management Research, Scheme No. 78, Vijay Nagar",
     city: "Indore, MP, India",
-    zip: "452012",
-    mapPlaceholderUrl: "https://spark-builder.s3.us-east-1.amazonaws.com/image/2025/12/11/b9eaf92f-9728-4856-8163-e9c70fb0a8b6.png",
+    zip: "452010",
+    mapPlaceholderUrl: "https://maps.app.goo.gl/zoPbsvnpinREk5ko7",
   },
   socialLinks: [
     { 
@@ -40,7 +40,7 @@ export const DEVHUB_CONTACT_INFO: ContactInfoModel = {
     },
     {
       platform: "Instagram",
-      url: "https://instagram.com/devhub_piemr",
+      url: "https://www.instagram.com/devhub_piemr?igsh=MTQ3ZGR4cjFyZWQ3dA==",
       iconName: "Instagram",
     },
     {
