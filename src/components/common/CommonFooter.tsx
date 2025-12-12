@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import SafeIcon from '@/components/common/SafeIcon'
-
+import { CLUB_GENERAL_INFO } from '@/data/ClubData'
 interface CommonFooterProps {
   variant?: 'simple' | 'complex'
 }
@@ -62,7 +62,7 @@ export default function CommonFooter({ variant = 'complex' }: CommonFooterProps)
           <div className="col-span-1 md:col-span-2">
             <a href="./index.html" className="flex items-center gap-2 mb-4">
               <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <SafeIcon name="Code2" size={28} color="white" strokeWidth={2.5} />
+              <img src={CLUB_GENERAL_INFO.logoUrl} alt="DevHub Logo" className="w-10 h-10 object-contain group-hover:drop-shadow-glow transition-shadow" />
               </div>
               <span className="text-2xl font-bold text-gradient">DevHub</span>
             </a>
@@ -113,8 +113,8 @@ export default function CommonFooter({ variant = 'complex' }: CommonFooterProps)
               </li>
               <li className="flex items-start gap-2">
                 <SafeIcon name="Mail" size={16} className="mt-0.5 flex-shrink-0" />
-                <a href="mailto:devhub@piemr.edu" className="hover:text-primary transition-colors">
-                  devhub@piemr.edu
+                <a href="mailto:devhub.piemr@gmail.com" className="hover:text-primary transition-colors">
+                  devhub.piemr@gmail.com
                 </a>
               </li>
             </ul>
