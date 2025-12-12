@@ -17,7 +17,7 @@ function CodeRainBackground({
     };
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
-    const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+    const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZaaaabcdefghijklmnopqrstuvwxyz<>()[]{}|";
     const fontSize = 14;
     const columns = Math.floor(canvas.width / fontSize);
     const drops = Array(columns).fill(1);

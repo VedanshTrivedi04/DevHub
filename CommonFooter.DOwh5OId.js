@@ -285,7 +285,7 @@ function CommonFooter({
     /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-4 gap-8 mb-8", children: [
       /* @__PURE__ */ jsxs("div", { className: "col-span-1 md:col-span-2", children: [
         /* @__PURE__ */ jsxs("a", { href: "./index.html", className: "flex items-center gap-2 mb-4", children: [
-          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center", children: /* @__PURE__ */ jsx(SafeIcon, { name: "Code2", size: 28, color: "white", strokeWidth: 2.5 }) }),
+          /* @__PURE__ */ jsx("div", { className: "w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center", children: /* @__PURE__ */ jsx("img", { src: CLUB_GENERAL_INFO.logoUrl, alt: "DevHub Logo", className: "w-10 h-10 object-contain group-hover:drop-shadow-glow transition-shadow" }) }),
           /* @__PURE__ */ jsx("span", { className: "text-2xl font-bold text-gradient", children: "DevHub" })
         ] }),
         /* @__PURE__ */ jsx("p", { className: "text-muted-foreground max-w-md mb-4", children: "Empowering students through web development education, collaboration, and innovation at PIEMR." }),
@@ -304,7 +304,7 @@ function CommonFooter({
           ] }),
           /* @__PURE__ */ jsxs("li", { className: "flex items-start gap-2", children: [
             /* @__PURE__ */ jsx(SafeIcon, { name: "Mail", size: 16, className: "mt-0.5 flex-shrink-0" }),
-            /* @__PURE__ */ jsx("a", { href: "mailto:devhub@piemr.edu", className: "hover:text-primary transition-colors", children: "devhub@piemr.edu" })
+            /* @__PURE__ */ jsx("a", { href: "mailto:devhub.piemr@gmail.com", className: "hover:text-primary transition-colors", children: "devhub.piemr@gmail.com" })
           ] })
         ] })
       ] })
